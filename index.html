@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA - Home</title>
+  <script type="module" src="/src/app.js"></script>
+  <style>
+    /* Basic styles for posts */
+    .post-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-card h2 {
+      margin-top: 0;
+    }
+
+    .post-media {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      font-style: italic;
+      color: #555;
+    }
+
+    .created-date {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+
+  <h1>Home</h1>
+
+  <nav>
+    <a href="/profile/">My Profile</a>
+    <a href="/auth/login/">Login</a>
+    <a href="/auth/register/">Register</a>
+    <a href="/post/create/">Create</a>
+    <a href="/post/edit/">Edit</a>
+    <button id="logout-button">Logout</button>
+  </nav>
+
+  <div id="posts-container">
+  </div>
+</body>
+
+</html>
