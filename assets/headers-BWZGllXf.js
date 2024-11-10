@@ -1,0 +1,1 @@
+function n(){const e=new Headers,o=localStorage.getItem("apiKey");return o?e.append("X-Noroff-API-Key",o):console.warn("API_KEY is not defined. X-Noroff-API-Key header will not be set."),e}export{n as h};

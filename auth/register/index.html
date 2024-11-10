@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noroff FED2 JS2 CA - Register</title>
+    <script type="module" crossorigin src="/JavaScript-CA-2/assets/app-BIxZ6sM_.js"></script>
+    <link rel="stylesheet" crossorigin href="/JavaScript-CA-2/assets/app-Ba_kYBH0.css">
+  </head>
+
+  <body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md p-8 bg-gray-800 text-gray-100 rounded-lg shadow-md">
+      <h1 class="text-3xl font-bold mb-6 text-center">Register</h1>
+      <form name="register" class="space-y-5">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            maxlength="20"
+            pattern="^[\w]+$"
+            title="Please enter a username using only letters and numbers"
+            class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+            title="Please enter a valid noroff.no or stud.noroff.no address"
+            class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
+          />
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-300">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            minlength="8"
+            class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
+          />
+        </div>
+
+        <button type="submit" class="w-full py-2 px-4 bg-green-500 text-white font-bold rounded-md hover:bg-green-600 transition duration-300">
+          Register
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-sm text-gray-400">
+        Already have an account?
+        <a href="/auth/login/" class="text-blue-400 hover:underline">Login</a>
+      </p>
+    </div>
+  </body>
+</html>
+

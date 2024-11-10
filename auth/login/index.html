@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script type="module" crossorigin src="/JavaScript-CA-2/assets/app-BIxZ6sM_.js"></script>
+    <link rel="stylesheet" crossorigin href="/JavaScript-CA-2/assets/app-Ba_kYBH0.css">
+  </head>
+
+  <body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-sm p-6 bg-gray-800 text-gray-100 rounded-lg shadow-md">
+      <h1 class="text-2xl font-bold mb-5 text-center">Login</h1>
+      <form name="login" class="space-y-4">
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+          <input id="email" type="email" name="email" required class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white" />
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-300">Password</label>
+          <input id="password" type="password" name="password" required class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white" />
+        </div>
+
+        <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 transition duration-300">Login</button>
+      </form>
+
+      <p class="mt-4 text-center text-sm text-gray-400">
+        Don't have an account?
+        <a href="/auth/register/" class="text-blue-400 hover:underline">Register here</a>
+      </p>
+    </div>
+  </body>
+</html>
+
