@@ -3,61 +3,27 @@
 
 <head>
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noroff FED2 JS2 CA - Home</title>
   <script type="module" src="/src/app.js"></script>
-  <style>
-    /* Basic styles for posts */
-    .post-card {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .post-card h2 {
-      margin-top: 0;
-    }
-
-    .post-media {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-      margin-bottom: 10px;
-    }
-
-    .tags {
-      font-style: italic;
-      color: #555;
-    }
-
-    .created-date {
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    .error-message {
-      color: red;
-      font-weight: bold;
-    }
-  </style>
 </head>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <header class="flex justify-between items-center p-6 bg-gray-800 shadow-md">
+    <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-10">
+    <nav class="space-x-4">
+      <a href="/profile/" class="text-gray-300 hover:text-white transition">My Profile</a>
+      <a href="/post/create/" class="text-gray-300 hover:text-white transition">Create</a>
+      <button id="logout-button" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">Logout</button>
+    </nav>
+  </header>
 
-  <h1>Home</h1>
-
-  <nav>
-    <a href="/profile/">My Profile</a>
-    <a href="/post/create/">Create</a>
-    <button id="logout-button">Logout</button>
-  </nav>
-
-  <div id="posts-container">
-  </div>
+  <main class="p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center">Home</h1>
+    <div id="posts-container" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    </div>
+  </main>
 </body>
 
 </html>
+

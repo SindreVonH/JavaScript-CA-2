@@ -8,20 +8,28 @@ import { navigateToEditPage } from './edit.js';
  * @param {Object} post - The post data.
  * @returns {HTMLElement} The card element.
  */
-
 function createPostCard(post) {
   const card = document.createElement("div");
-  card.classList.add("post-card");
+  card.classList.add(
+    "bg-gray-800",
+    "text-gray-100",
+    "p-6",
+    "rounded-lg",
+    "shadow-md",
+    "hover:shadow-lg",
+    "transition",
+    "duration-300"
+  );
 
   card.innerHTML = `
-    <h2>${post.title}</h2>
-    ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}" class="post-media"/>` : ""}
-    <p>${post.body}</p>
-    ${post.tags && post.tags.length ? `<p class="tags">Tags: ${post.tags.join(", ")}</p>` : ""}
-    <p class="created-date">Created on: ${new Date(post.created).toLocaleDateString()}</p>
-    <div class="button-group">
-      <button class="edit-button" data-post-id="${post.id}">Edit</button>
-      <button class="delete-button" data-post-id="${post.id}">Delete</button>
+    <h2 class="text-xl font-bold mb-2">${post.title}</h2>
+    ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}" class="w-full h-80 object-cover rounded-md mb-4"/>` : ""}
+    <p class="text-gray-300 mb-4">${post.body}</p>
+    ${post.tags && post.tags.length ? `<p class="text-sm text-gray-400 mb-2">Tags: ${post.tags.join(", ")}</p>` : ""}
+    <p class="text-sm text-gray-500 mb-4">Created on: ${new Date(post.created).toLocaleDateString()}</p>
+    <div class="button-group flex space-x-4">
+      <button class="edit-button bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300" data-post-id="${post.id}">Edit</button>
+      <button class="delete-button bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-300" data-post-id="${post.id}">Delete</button>
     </div>
   `;
 
@@ -43,7 +51,6 @@ function createPostCard(post) {
  *
  * @param {Array<Object>} posts - Array of post objects.
  */
-
 export function renderProfilePosts(posts) {
   const postsContainer = document.getElementById("posts-container");
   if (!postsContainer) {
@@ -64,18 +71,16 @@ export function renderProfilePosts(posts) {
  *
  * @param {string} message - The error message to display.
  */
-
 export function displayProfileError(message) {
   const postsContainer = document.getElementById("posts-container");
   if (postsContainer) {
-    postsContainer.innerHTML = `<p class="error-message">${message}</p>`;
+    postsContainer.innerHTML = `<p class="text-red-500">${message}</p>`;
   }
 }
 
 /**
  * Fetches and displays posts on the profile page.
  */
-
 export async function displayProfilePosts() {
   try {
     const user = JSON.parse(localStorage.getItem("user"));
