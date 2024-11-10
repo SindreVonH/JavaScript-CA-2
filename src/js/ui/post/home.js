@@ -9,16 +9,37 @@ import { readPosts } from "../../api/post/read.js";
 
 function createPostCard(post) {
   const card = document.createElement("div");
-  card.classList.add("post-card");
+  card.classList.add(
+    "bg-gray-800",
+    "text-gray-100",
+    "p-6",
+    "rounded-lg",
+    "shadow-lg",
+    "hover:shadow-xl",
+    "transition",
+    "duration-300"
+  );
+
   const postLink = document.createElement("a");
   postLink.href = `/post/?id=${post.id}`;
-  postLink.classList.add("post-link"); 
+  postLink.classList.add("post-link", "block", "space-y-4"); 
+
   postLink.innerHTML = `
-    <h2>${post.title}</h2>
-    ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}" class="post-media"/>` : ""}
-    <p>${post.body}</p>
-    ${post.tags && post.tags.length ? `<p class="tags">Tags: ${post.tags.join(", ")}</p>` : ""}
-    <p class="created-date">Created on: ${new Date(post.created).toLocaleDateString()}</p>
+    <h2 class="text-xl font-bold">${post.title}</h2>
+    ${
+      post.media
+        ? `<img src="${post.media.url}" alt="${post.media.alt}" class="w-full h-80 object-cover rounded-md"/>`
+        : ""
+    }
+    <p class="text-gray-300">${post.body}</p>
+    ${
+      post.tags && post.tags.length
+        ? `<p class="text-sm text-gray-400">Tags: ${post.tags.join(", ")}</p>`
+        : ""
+    }
+    <p class="text-sm text-gray-500">Created on: ${new Date(
+      post.created
+    ).toLocaleDateString()}</p>
   `;
 
   card.appendChild(postLink);
@@ -30,14 +51,13 @@ function createPostCard(post) {
  *
  * @param {Array<Object>} posts - Array of post objects.
  */
-
 export function renderHomePosts(posts) {
   const postsContainer = document.getElementById("posts-container");
   if (!postsContainer) {
     console.error("Posts container not found.");
     return;
   }
-  postsContainer.innerHTML = ""; 
+  postsContainer.innerHTML = "";
 
   posts.forEach(post => {
     const postCard = createPostCard(post);
@@ -50,12 +70,11 @@ export function renderHomePosts(posts) {
  *
  * @param {string} message - The error message to display.
  */
-
 export function displayHomeError(message) {
   const postsContainer = document.getElementById("posts-container");
   if (postsContainer) {
-    postsContainer.innerHTML = `<p class="error-message">${message}</p>`;
-  } 
+    postsContainer.innerHTML = `<p class="text-red-500">${message}</p>`;
+  }
 }
 
 /**

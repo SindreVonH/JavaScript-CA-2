@@ -1,20 +1,23 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
-  <body>
-    <h1>Post Page</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA - Single Post</title>
+  <script type="module" src="/src/app.js"></script>
+</head>
 
-    
-    <div id="post-container"></div>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-6">
+  <header class="w-full max-w-4xl flex justify-between items-center mb-6 bg-gray-800 p-4 rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold">Post Page</h1>
+    <a href="/" class="text-blue-500 hover:text-blue-300 transition">← Back to Home</a>
+  </header>
 
-    
-    <a href="/">← Back to Home</a>
+  <main id="post-container" class="w-full max-w-4xl bg-gray-800 p-8 rounded-lg shadow-md">
+    <!-- Post content will be dynamically rendered here -->
+  </main>
+</body>
 
-  </body>
 </html>
+

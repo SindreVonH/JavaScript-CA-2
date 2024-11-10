@@ -22,17 +22,28 @@ export function getPostIdFromURL() {
 
 export function createPostElement(post) {
   const postContainer = document.createElement("div");
-  postContainer.classList.add("single-post");
+  postContainer.classList.add(
+    "bg-gray-800",
+    "text-gray-100",
+    "p-6",
+    "rounded-lg",
+    "shadow-md",
+    "mb-6"
+  );
 
   postContainer.innerHTML = `
-    <h2>${post.title}</h2>
-    ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}" class="post-media"/>` : ""}
-    <p>${post.body}</p>
-    ${post.tags && post.tags.length ? `<p class="tags">Tags: ${post.tags.join(", ")}</p>` : ""}
-    <p class="created-date">Created on: ${new Date(post.created).toLocaleDateString()}</p>
-    <p class="updated-date">Last updated: ${new Date(post.updated).toLocaleDateString()}</p>
-    <p class="comments-count">Comments: ${post._count.comments}</p>
-    <p class="reactions-count">Reactions: ${post._count.reactions}</p>
+    <h2 class="text-2xl font-bold mb-4">${post.title}</h2>
+    ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}" class="w-full h-100 object-cover rounded-md mb-6"/>` : ""}
+    <p class="text-gray-300 mb-4">${post.body}</p>
+    ${post.tags && post.tags.length ? `<p class="text-sm text-gray-400 mb-4">Tags: ${post.tags.join(", ")}</p>` : ""}
+    <p class="text-sm text-gray-500 mb-4">Created on: ${new Date(post.created).toLocaleDateString()}</p>
+    ${
+      post.updated
+        ? `<p class="text-sm text-gray-500 mb-4">Last updated: ${new Date(post.updated).toLocaleDateString()}</p>`
+        : ""
+    }
+    <p class="text-sm text-gray-500 mb-4">Comments: ${post._count.comments}</p>
+    <p class="text-sm text-gray-500">Reactions: ${post._count.reactions}</p>
   `;
 
   return postContainer;

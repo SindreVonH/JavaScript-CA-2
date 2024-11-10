@@ -3,27 +3,29 @@
 
 <head>
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noroff FED2 JS2 CA - Profile</title>
   <script type="module" src="/src/app.js"></script>
 </head>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <header class="flex justify-between items-center p-6 bg-gray-800 shadow-md">
+    <img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-10">
+    <nav class="space-x-4">
+      <a href="/" class="text-gray-300 hover:text-white transition">Homepage</a>
+      <a href="/post/create/" class="text-gray-300 hover:text-white transition">Create</a>
+      <button id="logout-button" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">Logout</button>
+    </nav>
+  </header>
 
-  <h1>My Profile</h1>
-
-  <nav>
-    <a href="/">Homepage</a>
-    <a href="/post/create/">Create</a>
-    <button id="logout-button">Logout</button>
-  </nav>
-
-  <div id="posts-container">
-    
-  </div>
+  <main class="p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center">My Profile</h1>
+    <div id="posts-container" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Posts will be dynamically rendered here -->
+    </div>
+  </main>
 </body>
 
 </html>
+
 

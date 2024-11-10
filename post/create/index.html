@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA - Create Post</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
 
-  <body>
-    <h1>Create a New Post</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA - Create Post</title>
+  <script type="module" src="/src/app.js"></script>
+</head>
 
-    <form name="createPost">
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-lg p-8 bg-gray-800 rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold mb-6 text-center">Create a New Post</h1>
+    <form name="createPost" class="space-y-5">
       <div>
-        <label for="title">Title</label>
+        <label for="title" class="block text-sm font-medium text-gray-300">Title</label>
         <input
           id="title"
           type="text"
@@ -20,53 +21,63 @@
           required
           maxlength="100"
           placeholder="Enter post title"
+          class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
         />
       </div>
 
       <div>
-        <label for="body">Content</label>
+        <label for="body" class="block text-sm font-medium text-gray-300">Content</label>
         <textarea
           id="body"
           name="body"
           maxlength="1000"
           placeholder="Write your post content here..."
+          class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white resize-y"
         ></textarea>
       </div>
 
       <div>
-        <label for="tags">Tags (comma separated)</label>
+        <label for="tags" class="block text-sm font-medium text-gray-300">Tags (comma separated)</label>
         <input
           type="text"
           id="tags"
           name="tags"
           placeholder="e.g., javascript, webdev"
+          class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
         />
       </div>
 
       <div>
-        <label for="mediaUrl">Media URL</label>
+        <label for="mediaUrl" class="block text-sm font-medium text-gray-300">Media URL</label>
         <input
           type="url"
           id="mediaUrl"
           name="mediaUrl"
           placeholder="https://example.com/image.jpg"
+          class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
         />
       </div>
 
       <div>
-        <label for="mediaAlt">Media Alt Text</label>
+        <label for="mediaAlt" class="block text-sm font-medium text-gray-300">Media Alt Text</label>
         <input
           type="text"
           id="mediaAlt"
           name="mediaAlt"
           maxlength="120"
           placeholder="Describe the image"
+          class="mt-1 w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
         />
       </div>
 
-      <button type="submit">Create Post</button>
+      <button type="submit" class="w-full py-3 px-4 bg-green-600 text-white font-bold rounded-md hover:bg-green-700 transition duration-300">
+        Create Post
+      </button>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>
+
 
 
